@@ -10,14 +10,14 @@ public:
         }
 
         //8 possible moves
-        int ans1=isValid(grid,r-2,c+1,n,expVal+1);
-        int ans2=isValid(grid,r-1,c+2,n,expVal+1);
-        int ans3=isValid(grid,r+1,c+2,n,expVal+1);
-        int ans4=isValid(grid,r+2,c+1,n,expVal+1);
-        int ans5=isValid(grid,r+2,c-1,n,expVal+1);
-        int ans6=isValid(grid,r+1,c-2,n,expVal+1);
-        int ans7=isValid(grid,r-1,c-2,n,expVal+1);
-        int ans8=isValid(grid,r-2,c-1,n,expVal+1);
+        bool ans1=isValid(grid,r-2,c+1,n,expVal+1);
+        bool ans2=isValid(grid,r-1,c+2,n,expVal+1);
+        bool ans3=isValid(grid,r+1,c+2,n,expVal+1);
+        bool ans4=isValid(grid,r+2,c+1,n,expVal+1);
+        bool ans5=isValid(grid,r+2,c-1,n,expVal+1);
+        bool ans6=isValid(grid,r+1,c-2,n,expVal+1);
+        bool ans7=isValid(grid,r-1,c-2,n,expVal+1);
+        bool ans8=isValid(grid,r-2,c-1,n,expVal+1);
 
         return ans1 || ans2 ||ans3 ||ans4 ||ans5 || ans6 ||ans7 || ans8;
     }
