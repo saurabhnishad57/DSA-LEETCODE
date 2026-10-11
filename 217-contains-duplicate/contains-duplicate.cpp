@@ -9,7 +9,7 @@ public:
         //     }
         // }
         // return false;
-        set<int> s;
+        unordered_set<int> s;
         for(int x: nums){
             if(s.find(x)!=s.end()){
                 return true;
