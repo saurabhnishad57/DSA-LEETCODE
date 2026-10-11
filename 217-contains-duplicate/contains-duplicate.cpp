@@ -11,7 +11,7 @@ public:
         // return false;
         unordered_set<int> s;
         for(int x: nums){
-            if(s.find(x)!=s.end()){
+            if(s.count(x)){
                 return true;
             }
             s.insert(x);
