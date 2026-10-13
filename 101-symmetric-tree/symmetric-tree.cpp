@@ -17,7 +17,7 @@ public:
         }else if(l==NULL || r==NULL){
             return l==r;
         }
-        return l->val==r->val && check(l->left,r->right) && check(r->left,l->right);
+        return l->val==r->val && check(l->left,r->right) && check(l->right,r->left);
     }
     bool isSymmetric(TreeNode* root) {
         if(root==NULL) return false;
