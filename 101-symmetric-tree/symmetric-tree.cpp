@@ -20,7 +20,7 @@ public:
         return l->val==r->val && check(l->left,r->right) && check(l->right,r->left);
     }
     bool isSymmetric(TreeNode* root) {
-        if(root==NULL) return false;
+        if(root==NULL) return true;
         bool ans=check(root->left,root->right);
         return ans;
     }
