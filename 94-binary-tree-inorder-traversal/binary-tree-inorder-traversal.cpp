@@ -9,24 +9,52 @@
  *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
  * };
  */
-class Solution {
+// class Solution {
+// public:
+//     void inorder(TreeNode* root, vector<int>& ans) {
+//         if(root == NULL)
+//             return;
+
+//         inorder(root->left, ans);
+
+//         ans.push_back(root->val);
+
+//         inorder(root->right, ans);
+//     }
+
+//     vector<int> inorderTraversal(TreeNode* root) {
+//         vector<int> ans;
+
+//         inorder(root, ans);
+
+//         return ans;
+//     }
+// };
+class Solution{
 public:
-    void inorder(TreeNode* root, vector<int>& ans) {
-        if(root == NULL)
-            return;
-
-        inorder(root->left, ans);
-
-        ans.push_back(root->val);
-
-        inorder(root->right, ans);
-    }
-
-    vector<int> inorderTraversal(TreeNode* root) {
+    vector<int> inorderTraversal(TreeNode* root){
         vector<int> ans;
-
-        inorder(root, ans);
-
+        TreeNode* curr=root;
+        while(curr!=NULL){
+            if(curr->left==NULL){
+                ans.push_back(curr->val);
+                curr=curr->right;
+            }else{
+                //find the Inorder Preprocessor
+                TreeNode* IP=curr->left;
+                while(IP->right!=NULL && IP->right!=curr){
+                    IP=IP->right;
+                }
+                if(IP->right==NULL){
+                    IP->right=curr; //thread creation
+                    curr=curr->left;
+                }else{
+                    IP->right=NULL; //thread destroy
+                    ans.push_back(curr->val);
+                    curr=curr->right;
+                }
+            }
+        }
         return ans;
     }
 };
