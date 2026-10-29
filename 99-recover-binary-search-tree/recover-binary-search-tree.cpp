@@ -14,7 +14,7 @@ public:
     TreeNode* prev=NULL;
     TreeNode* first=NULL;
     TreeNode* sec=NULL;
-    void inorder(TreeNode* root){
+    void inorder(TreeNode* root){ //O(n)
         if(root==NULL) return;
         inorder(root->left);
         if(prev!=NULL && prev->val > root->val){
@@ -28,8 +28,6 @@ public:
         //inorder=> first,sec
         //first and sec swap
         inorder(root);
-        int temp=first->val;
-        first->val=sec->val;
-        sec->val=temp;
+        swap(first->val,sec->val);
     }
 };
